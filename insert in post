@@ -1,0 +1,10 @@
+<?php
+
+//If a post-type doesn't have an editor, images can not be added to post. This fixes that.
+add_filter('get_media_item_args', 'allow_img_insertion');
+function allow_img_insertion($vars) {
+    $vars['send'] = true; // 'send' as in "Send to Editor"
+    return($vars);
+}
+
+?>
